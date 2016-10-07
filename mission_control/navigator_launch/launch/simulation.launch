@@ -16,6 +16,12 @@
       enforce: False
     </rosparam>
 
+
+    <!-- Fake Shooter -->
+    <node pkg="navigator_gazebo" type="shooter_sim.py" name="shooter_sim">
+        <rosparam file="$(find navigator_shooter)/launch/config.yaml" />
+    </node>
+
     <include file="$(find navigator_gazebo)/launch/goose.launch" if="$(arg gazebo)">
         <arg name="gui" value="$(arg gui)"/>
     </include>
